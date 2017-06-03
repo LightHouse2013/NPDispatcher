@@ -92,7 +92,7 @@ And when the task complete, you can commit(success) or fail it.
 - (NSArray<NPTask *> *)cancelNotStartTasks;
 ```
 
-### Example Usage
+### Usage Example
 > 1 . Define
 ``` Objective-C
 @property (nonatomic, strong) NPDispatcher *dispatcher;
