@@ -16,20 +16,21 @@
 @property (nonatomic, strong) dispatch_queue_t taskQueue;
 @property (nonatomic, assign) pthread_mutex_t lock;
 @property (nonatomic, assign) NSUInteger maxTaskCount;
-@property (nonatomic, copy) NPDispatchTasksCallBack callBack;
+@property (nonatomic, copy) NPTaskArrivedCallBack callBack;
 
 @end
 
 @implementation NPDispatcher
 
 #pragma mark - Initial
-+ (id)dispatcherWithMaxTaskCount:(NSUInteger)maxCount {
-    return [[self alloc] initWithMaxTaskCount:maxCount];
++ (NPDispatcher *)dispatcherWithMaxTaskCount:(NSUInteger)maxCount taskArrivedCallBack:(NPTaskArrivedCallBack)callBack {
+    return [[self alloc] initWithMaxTaskCount:maxCount taskArrivedCallBack:callBack];
 }
 
-- (id)initWithMaxTaskCount:(NSUInteger)maxCount {
+- (NPDispatcher *)initWithMaxTaskCount:(NSUInteger)maxCount taskArrivedCallBack:(NPTaskArrivedCallBack)callBack {
     if (self = [super init]) {
         _maxTaskCount = maxCount;
+        _callBack = callBack;
         _pendingTasks = [NSMutableArray array];
         _runningTasks = [NSMutableArray arrayWithCapacity:maxCount];
         
@@ -49,10 +50,6 @@
 }
 
 #pragma mark - Interface
-- (void)dispatchTasksCallBack:(NPDispatchTasksCallBack)callBack {
-    _callBack = callBack;
-}
-
 - (void)addTask:(NPTask *)task {
     if (task) {
         pthread_mutex_lock(&_lock);
@@ -85,13 +82,10 @@
     [self dispatchTasks];
 }
 
-- (void)cancelTask:(NPTask *)task {
+- (void)removeTask:(NPTask *)task {
     pthread_mutex_lock(&_lock);
     if ([_runningTasks containsObject:task]) {
         [_runningTasks removeObject:task];
-    }
-    if ([_pendingTasks containsObject:task]) {
-        [_pendingTasks removeObject:task];
     }
     pthread_mutex_unlock(&_lock);
     [self dispatchTasks];

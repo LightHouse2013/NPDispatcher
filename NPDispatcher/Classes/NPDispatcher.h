@@ -9,19 +9,17 @@
 #import <Foundation/Foundation.h>
 #import "NPTask.h"
 
+typedef void(^NPTaskArrivedCallBack)(NSArray<NPTask *> *tasks);
 
-typedef void(^NPDispatchTasksCallBack)(NSArray<NPTask *> *tasks);
 @interface NPDispatcher : NSObject
 
-+ (id)dispatcherWithMaxTaskCount:(NSUInteger)maxCount;
-- (id)initWithMaxTaskCount:(NSUInteger)maxCount;
-
-- (void)dispatchTasksCallBack:(NPDispatchTasksCallBack)callBack;
++ (NPDispatcher *)dispatcherWithMaxTaskCount:(NSUInteger)maxCount taskArrivedCallBack:(NPTaskArrivedCallBack)callBack;
+- (NPDispatcher *)initWithMaxTaskCount:(NSUInteger)maxCount taskArrivedCallBack:(NPTaskArrivedCallBack)callBack;
 
 - (void)addTask:(NPTask *)task;
 - (void)addTasks:(NSArray<NPTask *> *)tasks;
 - (void)insertTask:(NPTask *)task atIndex:(NSInteger)index;
-- (void)cancelTask:(NPTask *)task;
+- (void)removeTask:(NPTask *)task;
 - (NSArray<NPTask *> *)cancelNotStartTasks;
 
 @end

@@ -6,7 +6,7 @@
 //  Copyright (c) 2017 zhang.wenhai. All rights reserved.
 //
 
-@import XCTest;
+#import <XCTest/XCTest.h>
 
 @interface Tests : XCTestCase
 
@@ -24,9 +24,10 @@
     [super tearDown];
 }
 
-- (void)testTaskMaxCount {
+- (void)testDispatcher {
     
 }
+
 
 @end
 
