@@ -12,7 +12,6 @@
 @interface NPViewController ()
 
 @property (nonatomic, strong) NPDispatcher *dispatcher;
-@property (nonatomic, strong) NSMutableArray<NPTask *> *ts;
 @property (nonatomic, assign) NSInteger index;
 
 @end
@@ -22,10 +21,19 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    _ts = [NSMutableArray arrayWithCapacity:10];
     __weak typeof(self)weakSelf = self;
     _dispatcher = [NPDispatcher dispatcherWithMaxTaskCount:5 taskArrivedCallBack:^(NSArray<NPTask *> *tasks) {
-        [weakSelf processTasks:tasks];
+        NSUInteger taskCount = tasks.count;
+        for (NSUInteger index = 0; index < taskCount; index ++) {
+            NPTask *task = [tasks firstObject];
+            if (weakSelf.index % 2 == 0) {
+                [task commit];
+            }
+            else {
+                [task fail:[NSError errorWithDomain:@"NPDispatcher" code:-1 userInfo:@{@"error" : @"I`m uncareful failed."}]];
+            }
+            weakSelf.index ++;
+        }
     }];
     
     NSMutableArray<NPTask *> *testTasks = [NSMutableArray arrayWithCapacity:10];
@@ -45,25 +53,6 @@
     }
     [_dispatcher addTasks:testTasks];
 }
-
-- (void)processTasks:(NSArray<NPTask *> *)tasks {
-    [_ts addObjectsFromArray:tasks];
-    
-    NSUInteger taskCount = _ts.count;
-    for (NSUInteger index = 0; index < taskCount; index ++) {
-        NPTask *task = [_ts firstObject];
-        [_ts removeObject:task];
-        
-        if (_index % 2 == 0) {
-            [task commit];
-        }
-        else {
-            [task fail:[NSError errorWithDomain:@"NPDispatcher" code:-1 userInfo:@{@"error" : @"I`m uncareful failed."}]];
-        }
-        _index ++;
-    }
-}
-
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
