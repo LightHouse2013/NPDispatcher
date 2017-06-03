@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'NPDispatcher_Example' do
+  pod 'NPDispatcher', :path => '../'
+
+  target 'NPDispatcher_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
