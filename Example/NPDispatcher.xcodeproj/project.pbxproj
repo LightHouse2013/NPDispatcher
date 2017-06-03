@@ -37,8 +37,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		1F48C28256F791ED08AEF685 /* NPDispatcher.podspec */ = {isa = PBXFileReference; includeInIndex = 1; name = NPDispatcher.podspec; path = ../NPDispatcher.podspec; sourceTree = "<group>"; };
-		383E8FA43F7E5ACC82A757B1 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		1F48C28256F791ED08AEF685 /* NPDispatcher.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = NPDispatcher.podspec; path = ../NPDispatcher.podspec; sourceTree = "<group>"; };
+		383E8FA43F7E5ACC82A757B1 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		6003F58A195388D20070C39A /* NPDispatcher_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NPDispatcher_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6003F58D195388D20070C39A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		6003F58F195388D20070C39A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -62,7 +62,7 @@
 		71719F9E1E33DC2100824A3D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		873B8AEA1B1F5CCA007FD442 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		89730A3F1B0EF2B5D2001957 /* Pods-NPDispatcher_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NPDispatcher_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-NPDispatcher_Tests/Pods-NPDispatcher_Tests.release.xcconfig"; sourceTree = "<group>"; };
-		9B2000F7EE646098B57C2E02 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		9B2000F7EE646098B57C2E02 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		A0B3F509937CA6C2A7DC1328 /* Pods-NPDispatcher_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NPDispatcher_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NPDispatcher_Tests/Pods-NPDispatcher_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		BF522A237FD18FCF964240D6 /* Pods-NPDispatcher_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NPDispatcher_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-NPDispatcher_Example/Pods-NPDispatcher_Example.release.xcconfig"; sourceTree = "<group>"; };
 		C37E336B8B724590BAC38437 /* Pods_NPDispatcher_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NPDispatcher_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -145,9 +145,9 @@
 			children = (
 				6003F59C195388D20070C39A /* NPAppDelegate.h */,
 				6003F59D195388D20070C39A /* NPAppDelegate.m */,
-				873B8AEA1B1F5CCA007FD442 /* Main.storyboard */,
 				6003F5A5195388D20070C39A /* NPViewController.h */,
 				6003F5A6195388D20070C39A /* NPViewController.m */,
+				873B8AEA1B1F5CCA007FD442 /* Main.storyboard */,
 				71719F9D1E33DC2100824A3D /* LaunchScreen.storyboard */,
 				6003F5A8195388D20070C39A /* Images.xcassets */,
 				6003F594195388D20070C39A /* Supporting Files */,

@@ -1,0 +1,16 @@
+PODS:
+  - NPDispatcher (0.1.0)
+
+DEPENDENCIES:
+  - NPDispatcher (from `../`)
+
+EXTERNAL SOURCES:
+  NPDispatcher:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  NPDispatcher: 76125805ef1d1ce4e5d38abbf573de9b4df4add4
+
+PODFILE CHECKSUM: 9e2be2ac58f9f249007f748be754b675a1cc2637
+
+COCOAPODS: 1.2.1
