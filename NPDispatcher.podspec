@@ -22,11 +22,11 @@ Pod::Spec.new do |s|
                       Can control running task max count
                       DESC
 
-  s.homepage         = 'https://github.com/zhang.wenhai/NPDispatcher'
+  s.homepage         = 'https://github.com/DarkKnightOne/NPDispatcher'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'zhang.wenhai' => 'zhang_mr1989@163.com' }
-  s.source           = { :git => 'https://github.com/zhang.wenhai/NPDispatcher.git', :tag => s.version.to_s }
+  s.source           = { :git => 'https://github.com/DarkKnightOne/NPDispatcher.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
   s.ios.deployment_target = '8.0'
