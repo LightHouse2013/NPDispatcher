@@ -6,7 +6,7 @@
 //  Copyright (c) 2017 zhang.wenhai. All rights reserved.
 //
 
-@import UIKit;
+#import <UIKit/UIKit.h>
 
 @interface NPViewController : UIViewController
 

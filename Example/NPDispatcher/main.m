@@ -6,11 +6,10 @@
 //  Copyright (c) 2017 zhang.wenhai. All rights reserved.
 //
 
-@import UIKit;
+#import <UIKit/UIKit.h>
 #import "NPAppDelegate.h"
 
-int main(int argc, char * argv[])
-{
+int main(int argc, char * argv[]) {
     @autoreleasepool {
         return UIApplicationMain(argc, argv, nil, NSStringFromClass([NPAppDelegate class]));
     }

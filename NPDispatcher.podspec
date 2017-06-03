@@ -9,7 +9,7 @@
 Pod::Spec.new do |s|
   s.name             = 'NPDispatcher'
   s.version          = '0.1.0'
-  s.summary          = 'A short description of NPDispatcher.'
+  s.summary          = 'A task dispatcher for iOS, OS X'
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
@@ -18,8 +18,9 @@ Pod::Spec.new do |s|
 #   * Finally, don't worry about the indent, CocoaPods strips it!
 
   s.description      = <<-DESC
-TODO: Add long description of the pod here.
-                       DESC
+                      A task dispatcher for iOS, OS. 
+                      Can control running task max count
+                      DESC
 
   s.homepage         = 'https://github.com/zhang.wenhai/NPDispatcher'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
