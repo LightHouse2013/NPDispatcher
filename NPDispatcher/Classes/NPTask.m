@@ -43,7 +43,7 @@
     _endDate = [NSDate date];
     
     if (_failedCallBack) {
-        _failedCallBack(self, error);
+        _failedCallBack(self);
     }
 }
 

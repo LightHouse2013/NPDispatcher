@@ -1,5 +1,5 @@
 PODS:
-  - NPDispatcher (0.1.0)
+  - NPDispatcher (1.0.0)
 
 DEPENDENCIES:
   - NPDispatcher (from `../`)
@@ -9,7 +9,7 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  NPDispatcher: 4bbc8efe7d4017d04443d41fc339d605df51715e
+  NPDispatcher: 5f3a0af9db46d879be0d2f5b2917c4aae28f78c4
 
 PODFILE CHECKSUM: b3c2e1de673602e92996a14fc3e52a7870f15850
 

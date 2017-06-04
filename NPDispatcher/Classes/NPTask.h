@@ -26,7 +26,7 @@ typedef enum : NSUInteger {
 @property (nonatomic, strong, readonly) NSError *error;
 
 @property (nonatomic, copy) void(^successCallBack)(NPTask *t);
-@property (nonatomic, copy) void(^failedCallBack)(NPTask *t, NSError *error);
+@property (nonatomic, copy) void(^failedCallBack)(NPTask *t);
 
 + (id)taskWithIdentifier:(NSUInteger)identifier dataObject:(id)data;
 - (id)initWithIdentifier:(NSUInteger)identifier dataObject:(id)data;

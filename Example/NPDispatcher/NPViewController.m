@@ -44,7 +44,7 @@
             NSLog(@"task %lu success.", t.identifier);
             [weakSelf.dispatcher removeTask:t];
         };
-        task.failedCallBack = ^(NPTask *t, NSError *error) {
+        task.failedCallBack = ^(NPTask *t) {
             NSLog(@"task %lu failed:%@.", t.identifier, t.error.description);
             [weakSelf.dispatcher removeTask:t];
         };
