@@ -109,6 +109,9 @@ _dispatcher = [NPDispatcher dispatcherWithMaxTaskCount:5 taskArrivedCallBack:^(N
         //If Fail
         [task fail:[NSError errorWithDomain:@"NPDispatcher" code:-1 userInfo:@{@"error" : @"I`m uncareful failed."}]];
     }
+    if (tasks.count == 0) {
+        NSLog("All of task is complete.");
+    }
 }];
 ```
 > 3 . Add Tasks
