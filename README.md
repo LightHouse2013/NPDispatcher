@@ -24,7 +24,7 @@ To run the example project, clone the repo, and run `pod install` from the Examp
 ```bash
 $ gem install cocoapods
 ```
-> CocoaPods 0.39.0+ is required to build NPDispatcher 1.0.0.
+> CocoaPods 0.39.0+ is required to build NPDispatcher 1.0.1.
 
 #### Podfile
 
@@ -35,7 +35,7 @@ source 'https://github.com/CocoaPods/Specs.git'
 platform :ios, '8.0'
 
 target 'TargetName' do
-pod 'NPDispatcher', '~> 1.0.0'
+pod 'NPDispatcher', '~> 1.0.1'
 end
 ```
 
