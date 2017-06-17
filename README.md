@@ -93,11 +93,15 @@ And when the task complete, you can commit(success) or fail it.
 ```
 
 ### Usage Example
-> 1 . Define
+> 1 .Import
+``` Objective-C
+#import <NPDispatcher/NPDispatcher.h>
+```
+> 2 . Define
 ``` Objective-C
 @property (nonatomic, strong) NPDispatcher *dispatcher;
 ```
-> 2 . Initial
+> 3 . Initial
 ``` Objective-C
 __weak typeof(self)weakSelf = self;
 _dispatcher = [NPDispatcher dispatcherWithMaxTaskCount:5 taskArrivedCallBack:^(NSArray<NPTask *> *tasks) {
@@ -114,7 +118,7 @@ _dispatcher = [NPDispatcher dispatcherWithMaxTaskCount:5 taskArrivedCallBack:^(N
     }
 }];
 ```
-> 3 . Add Tasks
+> 4 . Add Tasks
 ``` Objective-C
 NSMutableArray<NPTask *> *testTasks = [NSMutableArray arrayWithCapacity:10];
 for (int index = 0; index < 10; index ++) {
