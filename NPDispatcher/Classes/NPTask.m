@@ -1,11 +1,3 @@
-//
-//  NPTask.m
-//  Pods
-//
-//  Created by zhang.wenhai on 6/3/17.
-//
-//
-
 #import "NPTask.h"
 
 @implementation NPTask
@@ -24,26 +16,32 @@
 }
 
 - (void)start {
-    _state = kNPTaskStateProcessing;
-    _beginDate = [NSDate date];
+    if (_state == kNPTaskStateInitial) {
+        _state = kNPTaskStateProcessing;
+        _beginDate = [NSDate date];
+    }
 }
 
 - (void)commit {
-    _state = kNPTaskStateSuccess;
-    _endDate = [NSDate date];
-    
-    if (_successCallBack) {
-        _successCallBack(self);
+    if (_state == kNPTaskStateProcessing) {
+        _state = kNPTaskStateSuccess;
+        _endDate = [NSDate date];
+        
+        if (_successCallBack) {
+            _successCallBack(self);
+        }
     }
 }
 
 - (void)fail:(NSError *)error {
-    _state = kkNPTaskStateFailed;
-    _error = error;
-    _endDate = [NSDate date];
-    
-    if (_failedCallBack) {
-        _failedCallBack(self);
+    if (_state == kNPTaskStateProcessing) {
+        _state = kkNPTaskStateFailed;
+        _error = error;
+        _endDate = [NSDate date];
+        
+        if (_failedCallBack) {
+            _failedCallBack(self);
+        }
     }
 }
 

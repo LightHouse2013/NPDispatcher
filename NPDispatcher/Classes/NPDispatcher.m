@@ -1,18 +1,11 @@
-//
-//  NPDispatcher.m
-//  Pods
-//
-//  Created by zhang.wenhai on 6/3/17.
-//
-//
-
 #import "NPDispatcher.h"
 #include <pthread.h>
+#import "PriorityQueue.h"
 
 @interface NPDispatcher ()
 
-@property (nonatomic, strong) NSMutableArray<NPTask *> *pendingTasks;
-@property (nonatomic, strong) NSMutableArray<NPTask *> *runningTasks;
+@property (nonatomic, strong) PriorityQueue<NPTask *> *pendingTasks;
+@property (nonatomic, strong) PriorityQueue<NPTask *> *runningTasks;
 @property (nonatomic, strong) dispatch_queue_t taskQueue;
 @property (nonatomic, assign) pthread_mutex_t lock;
 @property (nonatomic, assign) NSUInteger maxTaskCount;
@@ -31,8 +24,8 @@
     if (self = [super init]) {
         _maxTaskCount = maxCount;
         _callBack = callBack;
-        _pendingTasks = [NSMutableArray array];
-        _runningTasks = [NSMutableArray arrayWithCapacity:maxCount];
+        _pendingTasks = [[PriorityQueue alloc] init];
+        _runningTasks = [[PriorityQueue alloc] initWithCapacity:maxCount];
         
         _taskQueue = dispatch_queue_create("com.darckknightone.dispatcher.queue", DISPATCH_QUEUE_SERIAL);
         
@@ -140,6 +133,5 @@
         });
     }
 }
-
 
 @end
